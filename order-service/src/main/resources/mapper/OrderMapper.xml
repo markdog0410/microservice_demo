@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.demo.dao.OrderDao">
+    <resultMap id="Order-ResultMap" type="com.demo.pojo.Order">
+        <result property="orderId"     column="ORDER_ID"/>
+        <result property="userId"      column="USER_ID"/>
+        <result property="productName" column="PRODUCT_NAME"/>
+        <result property="price"       column="PRICE"/>
+        <result property="quantity"    column="QUANTITY"/>
+    </resultMap>
+
+    <select id="selectOrderById" resultMap="Order-ResultMap">
+        select * from cloud_order where order_id = #{orderId}
+    </select>
+</mapper>
