@@ -24,8 +24,14 @@ mybatis:
     map-underscore-to-camel-case: true
     default-fetch-size: 100
     default-statement-timeout: 30
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:10086/eureka
+feign:
+  httpclient:
+    enabled: true                 #開啟 feign 對 httpclient 的支持
+    max-connections: 5            #最大連接數
+    max-connections-per-route: 10 #每條線最大連線數
