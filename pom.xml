@@ -26,6 +26,7 @@
         <module>user-service</module>
         <module>eureka-server</module>
         <module>feign-api</module>
+        <module>gateway</module>
     </modules>
     <scm>
         <connection/>

@@ -1,0 +1,25 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: user-service       #路由ID
+          uri: lb://user-service #lb=>LoadBalance，後面跟著服務名稱
+          predicates:
+            - Path=/user/**      #只要是/user/開頭就符合規則
+          filters:  #局部filter配法
+            - AddRequestHeader=Truth, itCat is awesome
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/order/**
+      default-filters: #全局filter配法
+        - AddRequestHeader=Truth, itCat is awesome
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+
