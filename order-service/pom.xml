@@ -53,10 +53,16 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
-<!--    優化 feign http 請求    -->
+<!--    優化 feign http 請求 (apache)   -->
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-httpclient</artifactId>
+        </dependency>
+
+<!--    取代ribbon，實現附載均衡 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
 
         <!--        register order service into eureka server as client -->

@@ -13,8 +13,9 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/{id}")
-    public User queryById(@PathVariable("id") Long id, @RequestHeader(value = "Truth") String truth){
-        System.out.println("filter data =>> " + truth);
+    public User queryById(@PathVariable("id") Long id){
+//        public User queryById(@PathVariable("id") Long id, @RequestHeader(value = "Truth") String truth){
+//        System.out.println("filter data =>> " + truth);
         return userService.selectUserById(id);
     }
 }

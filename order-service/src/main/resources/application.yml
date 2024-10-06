@@ -35,3 +35,6 @@ feign:
     enabled: true                 #開啟 feign 對 httpclient 的支持
     max-connections: 5            #最大連接數
     max-connections-per-route: 10 #每條線最大連線數
+logging:
+  level:
+    com.demo: debug

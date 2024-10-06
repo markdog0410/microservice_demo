@@ -15,9 +15,12 @@ public class OrderApplication {
         SpringApplication.run(OrderApplication.class, args);
     }
 
-    @Bean
-    @LoadBalanced
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
+    /**
+     * restTemplate 被 openFeign 取代
+     */
+//    @Bean
+//    @LoadBalanced
+//    public RestTemplate restTemplate() {
+//        return new RestTemplate();
+//    }
 }

@@ -10,14 +10,14 @@ spring:
           uri: lb://user-service #lb=>LoadBalance，後面跟著服務名稱
           predicates:
             - Path=/user/**      #只要是/user/開頭就符合規則
-          filters:  #局部filter配法
-            - AddRequestHeader=Truth, itCat is awesome
+#          filters:  #局部filter配法
+#            - AddRequestHeader=Truth, itCat is awesome
         - id: order-service
           uri: lb://order-service
           predicates:
             - Path=/order/**
-      default-filters: #全局filter配法
-        - AddRequestHeader=Truth, itCat is awesome
+#      default-filters: #全局filter配法
+#        - AddRequestHeader=Global, itCat is global
 eureka:
   client:
     service-url:
